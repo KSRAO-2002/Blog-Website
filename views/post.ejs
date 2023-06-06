@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<% var found = false; %>
+<% postArray.forEach(function(post) { %>
+    <% if (post.title == wantedPost) { %>
+        <div>
+            <h1><%= post.title %></h1>
+            <p><%= post.content %></p>
+        </div>
+        <% found = true; %>
+    <% } %>
+<% }) %>
+<% if (!found) { %>
+    <h1>Sorry we couldn't find that 🥲</h1>
+<% } %>
+<%- include('partials/footer') %>
